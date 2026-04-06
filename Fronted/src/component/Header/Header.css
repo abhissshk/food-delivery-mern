@@ -1,5 +1,5 @@
 .header{
-    height: 400px;
+    height:34vw;
     margin: 30px auto;
     background-size: cover;
     background-position: center;
@@ -8,14 +8,15 @@
 
 .header-contents{
     position: absolute;
-    top: 50%;              /* ✅ center vertically */
-    left: 40px;
-    transform: translateY(-50%);  /* ✅ perfect center */
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+     display: flex;
+    flex-direction:column;
+    align-items:start;
+    gap: 1.5vw;
     max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+
 }
 
 .header-contents h2,
