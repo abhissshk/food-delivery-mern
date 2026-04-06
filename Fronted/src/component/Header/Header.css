@@ -1,15 +1,15 @@
-.header{
+/* .header{
     height:34vw;
     margin: 30px auto;
     /* background: url("./header_img.png") no-repeat; */
-    background-size: cover;
-    position: relative;
-}
+    /* background-size: cover; */
+    /* position: relative; */
+ */
 
 .header{
     height: 400px;
     margin: 30px auto;
-    background: url("./header_img.png") no-repeat;
+    /* background: url("./header_img.png") no-repeat; */
     background-size: cover;
     background-position: center;
     position: relative;
