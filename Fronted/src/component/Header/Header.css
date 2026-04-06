@@ -1,12 +1,12 @@
 .header {
     height: 34vw;
-    width: 100%; /* Ensure it spans the full width */
+    width: 100%; 
     margin: 30px auto;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Prevents tiling if the image is small */
+    background-repeat: no-repeat; 
     position: relative;
-    border-radius: 15px; /* Added to match common food-del UI styles */
+    border-radius: 15px; 
 }
 
 .header-contents {
@@ -24,7 +24,7 @@
 .header-contents h2 {
     font-weight: 600;
     color: white;
-    font-size: max(4.5vw, 22px); /* Responsive heading size */
+    font-size: max(4.5vw, 22px); 
 }
 
 .header-contents p {
