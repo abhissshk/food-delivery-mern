@@ -7,7 +7,7 @@ function Fooditem({ id, name, price, description, image }) {
 
   const { cartitem = {}, addToCart, removeFromCart, url } = useContext(StoreContext);
 
-  // ✅ FIXED CONDITION
+  
   if (id === undefined || !image) return null;
 
   return (

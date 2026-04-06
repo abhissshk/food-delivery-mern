@@ -10,7 +10,7 @@ const[token,settoken]=useState("")
 const[food_list,setFoodlist]=useState([])
 
 
-  const url="http://localhost:4000"
+const url="https://food-del-backend-q2ah.onrender.com"
 
   const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {
@@ -54,7 +54,7 @@ const fetchFoodlist=async()=>{
 
 const loadCartData = async (token) => {
   const response = await axios.post(url + "/api/cart/get", {}, { headers: { token } });
-  setcartitem(response.data.cartData || {}); // ✅ fallback to {}
+  setcartitem(response.data.cartData || {}); 
 };
 
 
