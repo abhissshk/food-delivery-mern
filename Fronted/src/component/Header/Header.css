@@ -1,64 +1,68 @@
-.header{
-    height:34vw;
+.header {
+    height: 34vw;
+    width: 100%; /* Ensure it spans the full width */
     margin: 30px auto;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Prevents tiling if the image is small */
     position: relative;
+    border-radius: 15px; /* Added to match common food-del UI styles */
 }
 
-.header-contents{
+.header-contents {
     position: absolute;
-     display: flex;
-    flex-direction:column;
-    align-items:start;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     gap: 1.5vw;
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s;
-
 }
 
-.header-contents h2,
-.header-contents p{
+.header-contents h2 {
+    font-weight: 600;
     color: white;
+    font-size: max(4.5vw, 22px); /* Responsive heading size */
 }
 
-.header-contents button{
+.header-contents p {
+    color: white;
+    font-size: 1vw;
+}
+
+.header-contents button {
     border: none;
     color: #747474;
     font-weight: 500;
     padding: 1vw 2.3vw;
     background-color: white;
-    font-size: max(1vw,13px);
+    font-size: max(1vw, 13px);
     border-radius: 50px;
-
-
+    cursor: pointer;
 }
 
-@media (max-width:1050px){
-   
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-    .header-contents{
+@media (max-width: 1050px) {
+    .header-contents {
         max-width: 45%;
     }
-
 }
 
-
-@media (max-width:750px){
- 
-
-    .header-contents{
-        max-width:65%;
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 65%;
     }
-
-    .header-contents p{
+    .header-contents p {
         display: none;
     }
-
-    .header-contents button{
+    .header-contents button {
         padding: 2vw 4vw;
     }
-
 }
