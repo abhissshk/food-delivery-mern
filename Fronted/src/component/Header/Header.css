@@ -4,22 +4,13 @@
     background-size: cover;
     background-position: center;
     position: relative;
-
-    display: flex;
-    align-items: center;
-}
-
-.header::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
 }
 
 .header-contents{
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 50%;              /* ✅ center vertically */
     left: 40px;
+    transform: translateY(-50%);  /* ✅ perfect center */
 
     display: flex;
     flex-direction: column;
