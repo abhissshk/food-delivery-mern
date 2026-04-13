@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Place user order and create Stripe checkout session
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://localhost:5174";
+  const frontend_url = "https://food-del-fronted-laa2.onrender.com";
 
   try {
     // Ensure userId is present from authMiddleware
@@ -59,12 +59,12 @@ const placeOrder = async (req, res) => {
     console.log("Stripe line_items:", line_items);
 
     // Create Stripe session
-    const session = await stripe.checkout.sessions.create({
-      line_items,
-      mode: "payment",
-      success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
-      cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
-    });
+   const session = await stripe.checkout.sessions.create({
+  line_items,
+  mode: "payment",
+  success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
+  cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
+});
 
     res.json({ success: true, session_url: session.url });
   } catch (error) {
