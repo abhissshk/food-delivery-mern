@@ -5,7 +5,7 @@ import Fooditem from '../Fooditem/Fooditem';
 
 function FoodDisplay({ category }) {
 
-  const { food_list, loading } = useContext(StoreContext);
+  const { food_list, loading,searchQuery } = useContext(StoreContext);
 
   //  Show loader
   if (loading) {
@@ -23,21 +23,25 @@ function FoodDisplay({ category }) {
 
       <div className='food-display-list'>
 
-        {food_list.map((item) => {
-          if (category === "All" || category === item.category) {
-            return (
-              <Fooditem
-                key={item._id}
-                id={item._id}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                image={item.image}
-              />
-            );
-          }
-          return null; 
-        })}
+       {food_list
+  .filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+  .map((item) => {
+    if (category === "All" || category === item.category) {
+      return (
+        <Fooditem
+          key={item._id}
+          id={item._id}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+          image={item.image}
+        />
+      );
+    }
+    return null;
+  })}
 
       </div>
 

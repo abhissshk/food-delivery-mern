@@ -9,6 +9,7 @@ function storeContextProvider(props) {
 const[token,settoken]=useState("")
 const[food_list,setFoodlist]=useState([])
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
 
 const url="https://food-del-backend-q2ah.onrender.com"
@@ -95,7 +96,9 @@ useEffect(() => {
     url,
     token,
     settoken,
-      loading 
+      loading,
+        searchQuery,
+  setSearchQuery
   };
 
   return (
