@@ -1,42 +1,52 @@
-.food-display{
-
-    margin-top: 30px;
-
+/* 🔹 Main container */
+.food-display {
+  width: 100%;
+  padding: 20px;
 }
 
-.food-display h2{
-    font-size:max(2vw,24px) ;
-    font-weight: 600;
+/* 🔹 Heading */
+.food-display h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-
-.food-display-list{
-    display: grid;
-    grid-template-columns:repeat(auto-fill,minmax(240px,1fr)) ;
-    margin-top: 30px;
-    gap: 30px;
-    row-gap: 50px;
-
+/* 🔹 Food list grid */
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
 }
 
-.verify{
-    min-height: 60vh;
-    display: grid;
+/* 🔹 Loader container */
+.verify {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.verify .spinner{
-    width: 100px;
-    height: 100px;
-    place-self:center ;
-    border: 5px solid #bdbdbd;
-    border-top-color: tomato;
-    border-radius: 50%;
-    animation: rotate 1s infinite;
-
+/* 🔹 Spinner */
+.verify .spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #ff6347;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
 
-@keyframes rotate{
-    100%{
-        transform: rotate(360deg);
-    }
+/* 🔹 Loading text */
+.verify p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* 🔹 Animation */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
