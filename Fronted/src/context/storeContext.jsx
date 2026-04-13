@@ -8,6 +8,7 @@ function storeContextProvider(props) {
   const [cartItems, setcartitem] = useState({});
 const[token,settoken]=useState("")
 const[food_list,setFoodlist]=useState([])
+  const [loading, setLoading] = useState(true);
 
 
 const url="https://food-del-backend-q2ah.onrender.com"
@@ -58,19 +59,30 @@ const loadCartData = async (token) => {
 };
 
 
-useEffect(()=>{
- 
+useEffect(() => {
 
-  async function localData(){
-    await fetchFoodlist()
-  
-   if(localStorage.getItem("token")){
-    settoken(localStorage.getItem("token"))
-    await loadCartData(localStorage.getItem("token"))
-  }}
+    const loadData = async () => {
+      try {
+        setLoading(true); // start loader
 
-  localData()
-},[])
+        await fetchFoodlist();
+
+        if (localStorage.getItem("token")) {
+          const savedToken = localStorage.getItem("token");
+          settoken(savedToken);
+          await loadCartData(savedToken);
+        }
+
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false); // stop loader
+      }
+    };
+
+    loadData();
+
+  }, []);
 
   
   const contextValue = {
@@ -82,7 +94,8 @@ useEffect(()=>{
     getTotalCartAmount,
     url,
     token,
-    settoken
+    settoken,
+      loading 
   };
 
   return (
